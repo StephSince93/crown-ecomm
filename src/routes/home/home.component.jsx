@@ -1,5 +1,5 @@
-import Directory from "./components/directory/directory.component";
-const App = () => {
+import Directory from "../../components/directory/directory.component";
+const Home = () => {
   const categories = [
     {
       id: 1,
@@ -30,4 +30,4 @@ const App = () => {
   return <Directory categories={categories}/>;
 };
 
-export default App;
+export default Home;
