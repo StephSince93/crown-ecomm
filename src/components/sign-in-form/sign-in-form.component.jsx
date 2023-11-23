@@ -1,12 +1,13 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+
 import "./sign-in-form.styles.scss";
 import {
   //   auth,
   signInWithGooglePopup,
   //   signInWithGoogleRedirect,
-  createUserDocumentFromAuth,
+  // createUserDocumentFromAuth,
   signInUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils.js";
 const defaultFormFields = {
@@ -16,6 +17,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -26,28 +28,24 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
   const handleSubmit = async (event) => {
-    console.log("Here", event);
     // Log in user!;
     event.preventDefault(); //Needed for prevent refresh!
     try {
-        const { user } = await signInUserWithEmailAndPassword(
-          email,
-          password
-        );
+      await signInUserWithEmailAndPassword(email, password);
+
       resetFormFields();
     } catch (e) {
-        if(e.code === 'auth/invalid-login-credentials') {
-            alert('Error, Username or password are incorrect!');
-        }
-        console.log("User login encountered an error!", e);
+      if (e.code === "auth/invalid-login-credentials") {
+        alert("Error, Username or password are incorrect!");
+      }
+      console.log("User login encountered an error!", e);
     }
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
-  
+
   return (
     <div className="sign-in-container">
       <h2>Already have an account?</h2>
@@ -69,9 +67,11 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-        <div className='sign-in-button-conatiner'>
-        <Button type="submit">Sign In</Button>
-        <Button type="button" buttonType='google' onClick={signInWithGoogle}>Sign In With Google</Button>
+        <div className="sign-in-button-conatiner">
+          <Button type="submit">Sign In</Button>
+          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
+            Sign In With Google
+          </Button>
         </div>
       </form>
     </div>
