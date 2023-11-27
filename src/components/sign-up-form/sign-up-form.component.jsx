@@ -27,7 +27,6 @@ const SignUpForm = () => {
     setFormFields(defaultFormFields);
   };
   const handleSubmit = async (event) => {
-    console.log("Here", event);
     event.preventDefault(); //Needed for prevent refresh!
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
@@ -47,8 +46,6 @@ const SignUpForm = () => {
         console.log("User creation encountered an error!", e);
       }
     }
-
-    console.log("Here!");
   };
   return (
     <div className="sign-up-container">
