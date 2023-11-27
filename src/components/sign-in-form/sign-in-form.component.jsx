@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import "./sign-in-form.styles.scss";
+import {SignInContainer, SignInButtonContainer, Title} from "./sign-in-form.styles.jsx";
 import {
   //   auth,
   signInWithGooglePopup,
@@ -47,8 +47,8 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-in-container">
-      <h2>Already have an account?</h2>
+    <SignInContainer>
+      <Title>Already have an account?</Title>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -67,14 +67,14 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-        <div className="sign-in-button-conatiner">
+        <SignInButtonContainer>
           <Button type="submit">Sign In</Button>
           <Button buttonType={BUTTON_TYPE_CLASSES.google} type="button" onClick={signInWithGoogle}>
             Sign In With Google
           </Button>
-        </div>
+        </SignInButtonContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 
