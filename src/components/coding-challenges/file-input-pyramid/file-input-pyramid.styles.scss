@@ -1,0 +1,20 @@
+.pyramid-challange {
+  justify-self: center;
+  .pyramid-input {
+    display: flex;
+    justify-self: center;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .pyramid-title {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .pyramid-text {
+    text-align: center;
+  }
+}

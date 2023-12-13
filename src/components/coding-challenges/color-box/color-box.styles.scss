@@ -1,0 +1,12 @@
+.color-box-challenge {
+  text-align: center;
+  justify-self: center;
+  .color-box {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 10px;
+    height: 100px;
+    border: 1px solid blue;
+  }
+}

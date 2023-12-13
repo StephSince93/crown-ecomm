@@ -28,6 +28,7 @@ const Navigation = () => {
           <CrownLogo />
         </LogoContainer>
         <NavLinks>
+        <NavLink to="/coding-challenges">CODING CHALLENGES</NavLink>
           <NavLink to="/shop">SHOP</NavLink>
           {currentUser ? (
             <NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>
