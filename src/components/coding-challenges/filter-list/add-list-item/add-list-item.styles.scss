@@ -1,0 +1,36 @@
+.add-list-item-wrapper {
+  .add-list-item-input {
+    display: block;
+    padding: 5px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+  }
+
+  .add-list-item-button {
+    display: block;
+    padding: 5px 20px 5px 20px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 15%;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: -1em 0 0.4em grey;
+
+    &:hover {
+      background-color: lightcyan;
+    }
+
+    &:active {
+      background: #e5e5e5;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+      outline: none;
+    }
+  }
+}
