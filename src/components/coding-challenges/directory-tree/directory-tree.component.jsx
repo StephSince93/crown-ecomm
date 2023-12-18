@@ -76,7 +76,7 @@ const DirectoryTree = () => {
     <div className="directory-wrapper">
       <h2 className="directory-title">Directory Tree</h2>
       {directories.children.map((entry) => (
-        <Entry entry={entry} depth={1} />
+        <Entry key={entry.name} entry={entry} depth={1} />
       ))}
     </div>
   );
