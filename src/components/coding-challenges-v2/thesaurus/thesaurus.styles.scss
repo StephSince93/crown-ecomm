@@ -1,0 +1,18 @@
+.thesauras-wrapper {
+  text-align: center;
+
+  .search-input {
+    margin-left: 10px;
+  }
+  .search-button {
+    margin-top: 10px;
+  }
+  .search-list {
+    text-align: left;
+    height: 100px;
+    width: 200px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

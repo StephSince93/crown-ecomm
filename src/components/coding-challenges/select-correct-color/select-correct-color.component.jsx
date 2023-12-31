@@ -33,6 +33,7 @@ const SelectCorrectColor = () => {
   };
   return (
     <div className="color-wrapper">
+    <h2>Guess the Color</h2>
       <div className="color-box" style={{ background: color }}></div>
       {answers.map((a) => (
         <button
