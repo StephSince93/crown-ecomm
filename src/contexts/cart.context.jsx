@@ -78,11 +78,11 @@ export const CartProvider = ({ children }) => {
       (total, cartItem) => total + cartItem.quantity * cartItem.price,
       0
     );
-    createAction(CART_ACTION_TYPES.SET_CART_ITEMS, {
+    dispatch(createAction(CART_ACTION_TYPES.SET_CART_ITEMS, {
       cartItems: newCartItems,
       cartTotal: newCartTotal,
       cartCount: newCartCount,
-    });
+    }));
   };
 
   const addItemToCart = (productToAdd) => {
@@ -99,7 +99,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const setIsCartOpen = (bool) => {
-    createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool);
+    dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool));
   };
   const value = {
     isCartOpen,
